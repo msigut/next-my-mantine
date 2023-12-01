@@ -22,3 +22,6 @@ yarn.lock
 
 # idea
 .idea/
+
+# packages
+*.zip
