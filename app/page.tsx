@@ -1,33 +1,16 @@
-'use client';
 import Link from 'next/link';
-import {Button, Group, Image, useMantineColorScheme} from '@mantine/core';
 
 export default function HomePage() {
-    const { setColorScheme } = useMantineColorScheme();
     return (
         <>
-            <Button component={Link} href="/hello">
-                Next link button
-            </Button>
-
+            <h4>App router + Mantine</h4>
             <ul>
-                <li><Link href="/ui">UI</Link></li>
-                <li><Link href="/ui/my">UI: My</Link></li>
+                <li><Link href="/image">Image</Link> (pouziti Nextjs obrazku s Mantine)</li>
+                <li><Link href="/color">Theme color</Link> (zmena barvy Tema Mantine)</li>
+                <li><Link href="/card">Card</Link> (pouziti rozsirenych Mantine komponent)</li>
+                <li><Link href="/server">Server</Link> (ciste pouziti serveru - SSR)</li>
+                <li><Link href="/try-both">Try both</Link> (kombinace server & client komponent) <b>ERROR</b></li>
             </ul>
-
-            <Group justify="center" mt="xl">
-                <Button onClick={() => setColorScheme('light')}>Light</Button>
-                <Button onClick={() => setColorScheme('dark')}>Dark</Button>
-                <Button onClick={() => setColorScheme('auto')}>Auto</Button>
-            </Group>
-
-            <Image
-                src="/banner/1.denver.jpg"
-                width={400}
-                height={200}
-                className="hidden md:block"
-                alt="Screenshots of the dashboard project showing desktop version"
-            />
         </>
     );
 }
